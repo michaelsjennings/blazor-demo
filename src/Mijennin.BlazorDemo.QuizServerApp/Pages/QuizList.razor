@@ -1,0 +1,37 @@
+﻿@page "/quiz-list"
+@inherits QuizListBase
+
+<h3>Quizzes</h3>
+
+@if (Quizzes == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <p>
+        <a class="btn btn-sm btn-success" href="/quiz-add">Add</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var quiz in Quizzes)
+            {
+                <tr>
+                    <td>@quiz.Title</td>
+                    <td>
+                        <a class="btn btn-sm btn-primary" href="/quiz-edit/@quiz.Id">Edit</a>
+                        <button class="btn btn-sm btn-danger">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
