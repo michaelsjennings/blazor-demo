@@ -1,0 +1,32 @@
+﻿@page "/quiz-editor"
+@page "/quiz-editor/{id}"
+@inherits QuizEditorBase
+
+<h3>Quiz Editor</h3>
+
+<EditForm Model="@Quiz">
+
+    <label>
+        Title:
+        <InputText @bind-Value="Quiz.Title" />
+    </label>
+
+    <div>Questions</div>
+
+    <ul>
+        @foreach (var question in Quiz.Questions)
+        {
+            <li>
+                @question.QuestionText
+
+                <ul>
+                    @foreach (var choice in question.Choices)
+                    {
+                        <li class="@(question.CorrectChoice == choice ? "text-primary" : "")">@choice.ChoiceText</li>
+                    }
+                </ul>
+            </li>
+        }
+    </ul>
+
+</EditForm>

@@ -10,7 +10,8 @@
 else
 {
     <p>
-        <a class="btn btn-sm btn-success" href="/quiz-add">Add</a>
+        @*<a class="btn btn-sm btn-success" href="/quiz-add">Add</a>*@
+        <a class="btn btn-sm btn-success" href="/quiz-editor">Add</a>
     </p>
 
     <table class="table">
@@ -26,7 +27,8 @@ else
                 <tr>
                     <td>@quiz.Title</td>
                     <td>
-                        <a class="btn btn-sm btn-primary" href="/quiz-edit/@quiz.Id">Edit</a>
+                        @*<a class="btn btn-sm btn-primary" href="/quiz-edit/@quiz.Id">Edit</a>*@
+                        <a class="btn btn-sm btn-primary" href="/quiz-editor/@quiz.Id">Edit</a>
                         <button class="btn btn-sm btn-danger">Delete</button>
                     </td>
                 </tr>
